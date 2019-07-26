@@ -14,6 +14,6 @@ var duplicateZeros = function (arr) {
         }
         i++;
     }
-    arr.splice(len, count);
+    arr.length = arr.length - count;
 };
 
