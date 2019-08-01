@@ -12,22 +12,15 @@
  */
 var hasCycle = function(head) {
     var temp = head;
-    var obj = {};
-    var count = 0;
     if(temp == null){
         return false;
     }
-    while(true){
-        for(var key in obj){
-            if(obj[key] == temp){
-                return true;
-            } 
+    while(temp.next != null){
+        if(temp.hasOwnProperty('bool')){
+            return true;
         }
-        obj[count] = temp;
-        count++;
-        if(temp.next == null){
-            return false;
-        }
+        temp.bool = true;
         temp = temp.next;
     }
+    return false;
 };
